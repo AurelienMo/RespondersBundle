@@ -15,7 +15,7 @@
     "require": {
         "php": "^7",
         "symfony/framework-bundle": "^3.4|^4",
-        "twig/twig": "^2.11"
+        "twig/twig": "^2.10"
     },
     "autoload": {
         "psr-4": {
