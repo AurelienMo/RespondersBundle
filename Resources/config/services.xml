@@ -7,5 +7,6 @@
     <services>
         <defaults autowire="true" autoconfigure="true" public="false"/>
         <service id="Morvan\Bundle\RespondersBundle\Responders\ViewResponder" autowire="true" />
+        <service id="Morvan\Bundle\RespondersBundle\Responders\RedirectResponder" autowire="true" />
     </services>
 </container>
