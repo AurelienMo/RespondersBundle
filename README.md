@@ -55,6 +55,24 @@ public function listArticles(ViewResponder $viewResponder)
     );
 }
 ```
+### RedirectResponder
+#### Description
+This responder used to return a redirect response with route parameters
+#### Usage
+- Example inside Symfony, consider following method for an action :
+```
+use Morvan\Bundle\RespondersBundle\Responders\RedirectResponder;
+
+public function addArticle(RedirectResponder $redirectResponder)
+{
+    return $redirectResponder(
+       'show_article',
+       [
+            'id' => $article->getId(),
+       ]
+    );
+}
+```
 
 ## Quality
 Many tools used for quality.
