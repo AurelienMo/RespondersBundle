@@ -1,0 +1,42 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: circleci/php:7.2-fpm
+        steps:
+            - checkout
+            - run: sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+            - run: sudo php composer-setup.php
+            - run: sudo php -r "unlink('composer-setup.php');"
+            - run: sudo composer self-update
+            - restore_cache:
+                  keys:
+                      - composer-v1-{{ checksum "composer.lock" }}
+                      - composer-v1-
+            - run: sudo php -d memory_limit=-1 composer.phar install -n --optimize-autoloader --apcu-autoloader
+            - run: sudo php -d memory_limit=-1 composer.phar dump-autoload --optimize --apcu
+            - save_cache:
+                  key: composer-v1-{{ checksum "composer.lock" }}
+                  paths:
+                      - vendor
+            - run:
+                  name: Install PHP libzip-dev
+                  command: sudo apt-get install -y libzip-dev
+            - run:
+                  name: Install PHP zip
+                  command: sudo docker-php-ext-install zip
+            - run:
+                  name: Check Coding Style
+                  command: vendor/bin/phpcs
+            - run:
+                  name: Check PHPStan
+                  command: vendor/bin/phpstan analyze src --level=7
+            -   run:
+                  name: Valid unit tests
+                  command: vendor/bin/phpunit
+
+workflows:
+    version: 2
+    checker:
+        jobs:
+            - build

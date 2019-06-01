@@ -1,0 +1,30 @@
+{
+    "name": "amorvan/responders-bundle",
+    "description": "A bundle provide many responders according ADR architecture",
+    "keywords": ["Symfony", "Bundle", "ADR", "Responders"],
+    "homepage": "https://github.com/AurelienMo/RespondersBundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aurelien Morvan",
+            "email": "morvan.aurelien@gmail.com",
+            "homepage": "https://www.github.com/AurelienMo"
+        }
+    ],
+    "require": {
+        "php": "^7",
+        "symfony/framework-bundle": "^3.4|^4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Morvan\\Bundle\\RespondersBundle\\": ""
+        },
+        "exclude-from-classmap": ["/Tests/"]
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.4",
+        "phpstan/phpstan": "^0.11.8",
+        "phpunit/phpunit": "^8.1"
+    }
+}
