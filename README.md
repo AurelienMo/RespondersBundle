@@ -43,6 +43,8 @@ This responder used to return a response with a view build with twig.
 #### Usage
 - Example inside Symfony, consider following method for an action :
 ```
+use Morvan\Bundle\RespondersBundle\Responders\ViewResponder;
+
 public function listArticles(ViewResponder $viewResponder)
 {
     return $viewResponder(
@@ -50,7 +52,7 @@ public function listArticles(ViewResponder $viewResponder)
         [
             "articles" => $articles,
         ]
-    )
+    );
 }
 ```
 
