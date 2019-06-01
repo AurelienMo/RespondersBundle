@@ -1,0 +1,12 @@
+parameters:
+    excludes_analyse:
+        - vendor/
+        - Tests/
+        - composer.json
+        - composer.lock
+        - MorvanRespondersBundle.php
+        - phpcs.xml.dist
+        - phpstan.neon
+        - phpunit.xml.dist
+        - README.md
+        - Resources

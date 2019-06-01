@@ -30,7 +30,7 @@ jobs:
                   command: vendor/bin/phpcs
             - run:
                   name: Check PHPStan
-                  command: vendor/bin/phpstan analyze src --level=7
+                  command: vendor/bin/phpstan analyze . --level=7
             -   run:
                   name: Valid unit tests
                   command: vendor/bin/phpunit
