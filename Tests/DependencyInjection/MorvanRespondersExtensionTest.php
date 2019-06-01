@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace Tests\DependencyInjection;
 
 use Morvan\Bundle\RespondersBundle\DependencyInjection\MorvanRespondersExtension;
-use Morvan\Bundle\RespondersBundle\Responders\ViewResponder;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
