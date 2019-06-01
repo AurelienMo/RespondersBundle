@@ -37,7 +37,7 @@ phpcs: vendor/bin/phpcs
 
 phpstan: ## Run phpstan
 phpstan: vendor/bin/phpstan
-	vendor/bin/phpstan analyze src --level=7
+	vendor/bin/phpstan analyze . --level=7
 
 phpcbf: ## Run PHPCBF
 phpcbf: vendor/bin/phpcbf

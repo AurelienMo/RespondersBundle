@@ -10,6 +10,7 @@
     <rule ref="PSR2"/>
     <rule ref="PSR1"/>
 
-    <file>./</file>
-    <exclude-pattern>./Tests/*</exclude-pattern>
+    <file>.</file>
+    <exclude-pattern>Tests/*</exclude-pattern>
+    <exclude-pattern>vendor</exclude-pattern>
 </ruleset>
