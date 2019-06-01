@@ -44,6 +44,8 @@ class ViewResponder
      * @param string $template
      * @param array  $paramsTemplate
      *
+     * @param int    $statusCode
+     *
      * @return Response
      *
      * @throws LoaderError
@@ -52,10 +54,12 @@ class ViewResponder
      */
     public function __invoke(
         string $template,
-        array $paramsTemplate = []
+        array $paramsTemplate = [],
+        int $statusCode = Response::HTTP_OK
     ): Response {
         return new Response(
-            $this->templating->render($template, $paramsTemplate)
+            $this->templating->render($template, $paramsTemplate),
+            $statusCode
         );
     }
 }
