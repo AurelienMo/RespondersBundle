@@ -7,3 +7,5 @@
 - [DependencyInjection] Add RedirectResponder configuration with autowiring
 ## Version 1.3.0
 - [Responder] Add JSONResponder to return a json response. Encode string, array and object datas.
+## Version 1.3.1
+- [DIC] Declare JsonResponder as service.
