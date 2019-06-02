@@ -73,6 +73,21 @@ public function addArticle(RedirectResponder $redirectResponder)
     );
 }
 ```
+### JsonResponder
+#### Description
+This responder used to return a json response according many parameters
+#### Usage
+- Example inside Symfony, consider following method for an action :
+```
+use Morvan\Bundle\RespondersBundle\Responders\JsonResponder;
+
+public function getArticle(JsonResponder $jsonResponder)
+{
+    return $jsonResponder(
+       $datas
+    );
+}
+```
 
 ## Quality
 Many tools used for quality.
