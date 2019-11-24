@@ -24,7 +24,7 @@ use Symfony\Component\Serializer\SerializerInterface;
  */
 class JsonResponder
 {
-    const LIST_TYPE_ALLOWED = ['string', 'array', 'object'];
+    const LIST_TYPE_ALLOWED = ['string', 'array', 'object', 'NULL'];
 
     /** @var SerializerInterface */
     protected $serializer;
@@ -59,7 +59,7 @@ class JsonResponder
         $resultDatas = null;
         if (!in_array(gettype($datas), self::LIST_TYPE_ALLOWED)) {
             throw new TypeDatasNotAllowedException(
-                sprintf("Type '%s' for datas not allowed. Only 'string', 'array', 'object'", gettype($datas))
+                sprintf("Type '%s' for datas not allowed. Only 'string', 'array', 'object' or 'null' value are allowed", gettype($datas))
             );
         }
 
