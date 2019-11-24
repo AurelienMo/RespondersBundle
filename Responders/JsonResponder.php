@@ -41,7 +41,7 @@ class JsonResponder
     }
 
     /**
-     * @param null  $datas Datas allowed: string, object or array.
+     * @param null  $datas             Datas allowed: string, object or array.
      * @param int   $statusCode
      * @param array $additionalHeaders Eventual additionnal headers
      * @param array $contextSerializer If datas is object, context related serializer can be added
@@ -57,9 +57,15 @@ class JsonResponder
         array $contextSerializer = []
     ): Response {
         $resultDatas = null;
-        if (!in_array(gettype($datas), self::LIST_TYPE_ALLOWED)) {
+        if (!in_array(
+            gettype($datas),
+            self::LIST_TYPE_ALLOWED
+        )) {
             throw new TypeDatasNotAllowedException(
-                sprintf("Type '%s' for datas not allowed. Only 'string', 'array', 'object' or 'null' value are allowed", gettype($datas))
+                sprintf(
+                    "Type '%s' for datas not allowed. Only 'string', 'array', 'object' or 'null' value are allowed",
+                    gettype($datas)
+                )
             );
         }
 
@@ -68,10 +74,14 @@ class JsonResponder
                 $resultDatas = $datas;
                 break;
             case 'array':
-                $resultDatas = json_encode($datas);
+                $resultDatas = (string) json_encode($datas);
                 break;
             case 'object':
-                $resultDatas = $this->serializer->serialize($datas, 'json', $contextSerializer);
+                $resultDatas = $this->serializer->serialize(
+                    $datas,
+                    'json',
+                    $contextSerializer
+                );
                 break;
         }
 
