@@ -18,3 +18,5 @@
 - [Version] Make it bundle compatible with Symfony 5.*
 - [Version] Remove compatibility with PHP 7.1 / PHP 7.2 and add compatibility with PHP 7.4
 - [Quality] Update phpcs configuration
+## Version 3.0.3
+- [Composer] Add support for twig 3
