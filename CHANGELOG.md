@@ -13,3 +13,8 @@
 - [Version] Make it bundle compatible with Symfony 4.4
 ## Version 2.0.2
 - [Quality] Fix code style and phpstan errors
+## Version 3.0.0
+- [Composer] Upgrade version compatibilty with Symfony Dependency
+- [Version] Make it bundle compatible with Symfony 5.*
+- [Version] Remove compatibility with PHP 7.1 / PHP 7.2 and add compatibility with PHP 7.4
+- [Quality] Update phpcs configuration

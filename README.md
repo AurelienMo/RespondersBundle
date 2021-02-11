@@ -20,7 +20,7 @@ $bundles = [
         new AppBundle\AppBundle(),
     ];
 ```
-- For Symfony 3.4 with Flex or Symfony 4.*:
+- For Symfony 3.4 with Flex, Symfony 4.* or Symfony 5:
 
 Bundle is automatically add to `config/bundles.php`. Check the bundle is allow for all environment.
 ```
@@ -50,7 +50,7 @@ public function listArticles(ViewResponder $viewResponder)
     return $viewResponder(
         'list.html.twig',
         [
-            "articles" => $articles,
+            ".idea/articles" => $articles,
         ]
     );
 }
@@ -91,6 +91,6 @@ public function getArticle(JsonResponder $jsonResponder)
 
 ## Quality
 Many tools used for quality.
-- PHPCS : PSR 1 & 2.
+- PHPCS : PSR 1 & 12.
 - PHPStan
 - All builds passed by CircleCI.
