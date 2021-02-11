@@ -2,7 +2,7 @@ version: 2
 jobs:
     build:
         docker:
-            - image: circleci/php:7.2-fpm
+            - image: circleci/php:7.3-fpm
         steps:
             - checkout
             - run: sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
