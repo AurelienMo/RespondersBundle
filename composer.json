@@ -25,8 +25,8 @@
         "exclude-from-classmap": ["/Tests/"]
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.4",
-        "phpstan/phpstan": "^0.11.8",
+        "squizlabs/php_codesniffer": "^3.5.8",
+        "phpstan/phpstan": "^0.12.42",
         "phpunit/phpunit": "^8.1"
     }
 }
