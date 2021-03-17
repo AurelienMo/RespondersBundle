@@ -32,7 +32,7 @@ class MorvanRespondersExtension extends Extension
     public function load(
         array $configs,
         ContainerBuilder $container
-    ) {
+    ): void {
         $loader = new XmlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Resources/config')
