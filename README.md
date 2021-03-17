@@ -50,7 +50,7 @@ public function listArticles(ViewResponder $viewResponder)
     return $viewResponder(
         'list.html.twig',
         [
-            ".idea/articles" => $articles,
+            "articles" => $articles,
         ]
     );
 }
