@@ -7,7 +7,7 @@ A library to use many responders according ADR architecture.
 ## Installation
 - Require library
 ```
-composer require amorvan/responders
+composer require amorvan/responders-bundle
 ```
 - For Symfony 3.* without Flex:
 
@@ -85,6 +85,25 @@ public function getArticle(JsonResponder $jsonResponder)
 {
     return $jsonResponder(
        $datas
+    );
+}
+```
+
+### FileResponder
+#### Description
+This responder used to return a file.
+#### Usage
+- Example inside Symfony, consider following method for an action :
+```
+use Morvan\Bundle\RespondersBundle\Responders\FileResponder;
+
+public function getArticle(FileResponder $jsonResponder)
+{
+//$pathToFile accept string or SplFileObject
+//$fileName optionnal parameter
+    return $jsonResponder(
+       $pathToFile,
+       $fileName
     );
 }
 ```

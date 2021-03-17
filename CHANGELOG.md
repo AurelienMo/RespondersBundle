@@ -20,3 +20,7 @@
 - [Quality] Update phpcs configuration
 ## Version 3.0.3
 - [Composer] Add support for twig 3
+## Version 4.1.0
+- [Responder] Add FileResponder to return a file
+- [Docs] Update dependency name on composer require
+- [Docs] Add contributing document
