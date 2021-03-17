@@ -10,3 +10,4 @@ parameters:
         - phpunit.xml.dist
         - README.md
         - Resources
+    checkMissingIterableValueType: false
