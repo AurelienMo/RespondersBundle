@@ -2,7 +2,7 @@
 - CircleCI Status : Last version : [![CircleCI](https://circleci.com/gh/AurelienMo/RespondersBundle/tree/master.svg?style=svg)](https://circleci.com/gh/AurelienMo/RespondersBundle/tree/master)
 
 ## Description
-A library to use many responders according ADR architecture.
+A library to use many responders according to ADR architecture.
 
 ## Installation
 - Require library
@@ -12,23 +12,23 @@ composer require amorvan/responders
 - For Symfony 3.* without Flex:
 
 Adding bundle to `app/AppKernel.php`
-```
+```php
 //app/AppKernel.php
 $bundles = [
-        ...,
-        new Morvan\Bundle\RespondersBundle\MorvanRespondersBundle(),
+        // ...
         new AppBundle\AppBundle(),
+        new Morvan\Bundle\RespondersBundle\MorvanRespondersBundle(),
     ];
 ```
 - For Symfony 3.4 with Flex, Symfony 4.* or Symfony 5:
 
 Bundle is automatically add to `config/bundles.php`. Check the bundle is allow for all environment.
-```
+```php
 //config/bundles.php
 <?php
 
 return [
-    ...,
+    // ...
     Morvan\Bundle\RespondersBundle\MorvanRespondersBundle::class => ['all' => true],
 ];
 ```
@@ -42,7 +42,7 @@ return [
 This responder used to return a response with a view build with twig.
 #### Usage
 - Example inside Symfony, consider following method for an action :
-```
+```php
 use Morvan\Bundle\RespondersBundle\Responders\ViewResponder;
 
 public function listArticles(ViewResponder $viewResponder)
@@ -50,7 +50,7 @@ public function listArticles(ViewResponder $viewResponder)
     return $viewResponder(
         'list.html.twig',
         [
-            ".idea/articles" => $articles,
+            'articles' => $articles,
         ]
     );
 }
@@ -60,7 +60,7 @@ public function listArticles(ViewResponder $viewResponder)
 This responder used to return a redirect response with route parameters
 #### Usage
 - Example inside Symfony, consider following method for an action :
-```
+```php
 use Morvan\Bundle\RespondersBundle\Responders\RedirectResponder;
 
 public function addArticle(RedirectResponder $redirectResponder)
@@ -78,13 +78,13 @@ public function addArticle(RedirectResponder $redirectResponder)
 This responder used to return a json response according many parameters
 #### Usage
 - Example inside Symfony, consider following method for an action :
-```
+```php
 use Morvan\Bundle\RespondersBundle\Responders\JsonResponder;
 
 public function getArticle(JsonResponder $jsonResponder)
 {
     return $jsonResponder(
-       $datas
+       $data
     );
 }
 ```
